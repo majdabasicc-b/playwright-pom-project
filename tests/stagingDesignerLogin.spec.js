@@ -9,5 +9,6 @@ test.describe('Staging Designer login', () => {
         await page.getByRole('button', { name: 'Login' }).click()
         await page.waitForLoadState('networkidle')
         await expect(page).not.toHaveURL(/.*\/login/)
+        await page.locator('.app-header__logout').click()
     })
 })
